@@ -1,3 +1,18 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from kitchen.models import DishType, Dish, Cook
 
-# Register your models here.
+
+@admin.register(DishType)
+class DishTypeAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Dish)
+class DishAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Cook)
+class CookAdmin(UserAdmin):
+    pass
