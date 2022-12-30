@@ -11,7 +11,7 @@ body {
     width: 500px;
 }
 
-p.description {
+.description {
     display: inline-block;
     width: 500px;
     text-align: justify;

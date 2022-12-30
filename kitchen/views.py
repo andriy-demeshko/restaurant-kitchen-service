@@ -51,6 +51,11 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     #     return queryset
 
 
+class DishTypeDetailView(LoginRequiredMixin, generic.DetailView):
+    model = DishType
+    template_name = "kitchen/dish_type_detail.html"
+
+
 class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
     model = DishType
     fields = "__all__"

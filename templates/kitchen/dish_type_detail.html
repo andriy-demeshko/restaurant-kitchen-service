@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    {{ dishtype.name }}
+{#    <a href="#" class="btn btn-danger link-to-page">#}
+{#      Delete#}
+{#    </a>#}
+{##}
+{#    <a href="#" class="btn btn-secondary link-to-page">#}
+{#      Update experience#}
+{#    </a>#}
+  </h1>
+
+  <div class="ml-3">
+    <h3>Dishes:</h3>
+
+    {% for dish in dishtype.dishes.all %}
+        <hr>
+        <p><strong>Name:</strong> {{ dish.name }}</p>
+        <p><strong>Price:</strong> {{ dish.price }}</p>
+        <p class="description"><strong>Description:</strong> {{ dish.description }}</p>
+        <p class="text-muted"><strong>Id:</strong>
+          <a href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a>
+        </p>
+
+    {% empty %}
+      <p>No dishes!</p>
+    {% endfor %}
+  </div>
+{% endblock %}

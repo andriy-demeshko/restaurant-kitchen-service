@@ -27,14 +27,10 @@
 
       {% for dishtype in dish_type_list %}
         <tr>
+          <td>{{ dishtype.id }}</td>
+          <td><a href="{% url "kitchen:dish-type-detail" pk=dishtype.id %}">{{ dishtype.name }}</a></td>
           <td>
-              {{ dishtype.id }}
-          </td>
-          <td>
-              {{ dishtype.name }}
-          </td>
-          <td>
-              <a href="#">
+              <a style="color: green" href="#">
                 Update
               </a>
             </td>
