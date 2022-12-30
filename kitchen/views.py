@@ -7,6 +7,7 @@ from django.views import generic
 from kitchen.models import Cook, Dish, DishType
 
 
+@login_required
 def index(request):
     """View function for the home page of the site."""
 
@@ -159,7 +160,7 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("")
 
 
-# @login_required      # !!!!!
+# @login_required
 # def toggle_assign_to_car(request, pk):
 #     driver = Driver.objects.get(id=request.user.id)
 #     if Car.objects.get(id=pk) in driver.cars.all():  # probably could check if car exists
