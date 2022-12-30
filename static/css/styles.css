@@ -10,3 +10,9 @@ body {
 .home {
     width: 500px;
 }
+
+p.description {
+    display: inline-block;
+    width: 500px;
+    text-align: justify;
+}
