@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
+from kitchen.forms import DishForm, CookCreationForm, CookExperienceUpdateForm
 from kitchen.models import Cook, Dish, DishType
 
 
@@ -61,17 +62,20 @@ class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
     model = DishType
     fields = "__all__"
     success_url = reverse_lazy("kitchen:dish-type-list")
+    template_name = "kitchen/dish_type_form.html"
 
 
 class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = DishType
     fields = "__all__"
     success_url = reverse_lazy("kitchen:dish-type-list")
+    template_name = "kitchen/dish_type_form.html"
 
 
 class DishTypeDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = DishType
     success_url = reverse_lazy("kitchen:dish-type-list")
+    template_name = "kitchen/dish_type_confirm_delete.html"
 
 
 class DishListView(LoginRequiredMixin, generic.ListView):
@@ -100,16 +104,16 @@ class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
 
 
-# class DishCreateView(LoginRequiredMixin, generic.CreateView):
-#     model = Dish
-#     form_class = DishForm
-#     success_url = reverse_lazy("kitchen:dish-list")
+class DishCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Dish
+    form_class = DishForm
+    success_url = reverse_lazy("kitchen:dish-list")
 
 
-# class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
-#     model = Dish
-#     form_class = DishForm
-#     success_url = reverse_lazy("kitchen:dish-list")
+class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Dish
+    form_class = DishForm
+    success_url = reverse_lazy("kitchen:dish-list")
 
 
 class DishDeleteView(LoginRequiredMixin, generic.DeleteView):
@@ -144,26 +148,26 @@ class CookDetailView(LoginRequiredMixin, generic.DetailView):
     queryset = Cook.objects.all().prefetch_related("dishes__dish_type")
 
 
-# class CookCreateView(LoginRequiredMixin, generic.CreateView):
-#     model = Cook
-#     form_class = CookCreationForm
+class CookCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Cook
+    form_class = CookCreationForm
 
 
-# class CookExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
-#     model = Cook
-#     form_class = CookExperienceUpdateForm
-#     success_url = reverse_lazy("kitchen:cook-list")
+class CookExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Cook
+    form_class = CookExperienceUpdateForm
+    success_url = reverse_lazy("kitchen:cook-list")
 
 
 class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Cook
-    success_url = reverse_lazy("")
+    success_url = reverse_lazy("kitchen:cook-list")
 
 
 # @login_required
 # def toggle_assign_to_car(request, pk):
 #     driver = Driver.objects.get(id=request.user.id)
-#     if Car.objects.get(id=pk) in driver.cars.all():  # probably could check if car exists
+#     if Car.objects.get(id=pk) in driver.cars.all():
 #         driver.cars.remove(pk)
 #     else:
 #         driver.cars.add(pk)

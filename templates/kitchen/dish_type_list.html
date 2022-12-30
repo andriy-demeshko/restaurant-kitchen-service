@@ -6,7 +6,7 @@
 {% block content %}
   <h1>
     Dishes Types List
-    <a href="#" class="btn btn-primary link-to-page">
+    <a href="{% url 'kitchen:dish-type-create' %}" class="btn btn-primary link-to-page">
       Create
     </a>
   </h1>
@@ -30,13 +30,13 @@
           <td>{{ dishtype.id }}</td>
           <td><a href="{% url "kitchen:dish-type-detail" pk=dishtype.id %}">{{ dishtype.name }}</a></td>
           <td>
-              <a style="color: green" href="#">
+              <a style="color: green" href="{% url 'kitchen:dish-type-update' pk=dishtype.id %}">
                 Update
               </a>
             </td>
             <td>
               <a style="color: red"
-                href="#">
+                href="{% url 'kitchen:dish-type-delete' pk=dishtype.id %}">
                 Delete
               </a>
             </td>
