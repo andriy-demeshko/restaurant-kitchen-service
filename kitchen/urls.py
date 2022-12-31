@@ -16,7 +16,7 @@ from kitchen.views import (
     DishTypeCreateView,
     DishTypeUpdateView,
     DishTypeDeleteView,
-    # toggle_assign_to_car,
+    toggle_assign_to_dish,
 )
 
 
@@ -46,7 +46,7 @@ urlpatterns = [
     path("dishes/create/", DishCreateView.as_view(), name="dish-create"),
     path("dishes/<int:pk>/update/", DishUpdateView.as_view(), name="dish-update"),
     path("dishes/<int:pk>/delete/", DishDeleteView.as_view(), name="dish-delete"),
-    # path("dishes/<int:pk>/toggle-assign/", toggle_assign_to_car, name="toggle-car-assign"),
+    path("dishes/<int:pk>/toggle-assign/", toggle_assign_to_dish, name="toggle-dish-assign"),
 
     path("cooks/", CookListView.as_view(), name="cook-list"),
     path("cooks/<int:pk>/", CookDetailView.as_view(), name="cook-detail"),
