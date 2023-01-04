@@ -1,16 +1,16 @@
-{% extends "base.html" %}
+{% extends "base-presentation.html" %}
 
 {% block content %}
-  <h1>
+  <h2 style="padding-top: 100px">
     {{ dishtype.name }}
-{#    <a href="#" class="btn btn-danger link-to-page">#}
-{#      Delete#}
-{#    </a>#}
-{##}
-{#    <a href="#" class="btn btn-secondary link-to-page">#}
-{#      Update experience#}
-{#    </a>#}
-  </h1>
+    <a href="{% url 'kitchen:dish-type-delete' pk=dishtype.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'kitchen:dish-type-update' pk=dishtype.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+  </h2>
 
   <div class="ml-3">
     <h3>Dishes:</h3>
@@ -21,7 +21,7 @@
         <p><strong>Price:</strong> {{ dish.price }}</p>
         <p class="description"><strong>Description:</strong> {{ dish.description }}</p>
         <p class="text-muted"><strong>Id:</strong>
-          <a href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a>
+          <a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a>
         </p>
 
     {% empty %}

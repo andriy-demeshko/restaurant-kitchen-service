@@ -1,17 +1,19 @@
-{% extends "base.html" %}
+{% extends "base-presentation.html" %}
+{% load static %}
 {% load crispy_forms_filters %}
 
 {% block title %}<title>Restaurant Kitchen Service | Dishes</title>{% endblock %}
 
 {% block content %}
-  <h1>
-    Dish List
+
+  <h2 style="padding-top: 100px">
+    Dishes List
     <a href="{% url 'kitchen:dish-create' %}" class="btn btn-primary link-to-page">
       Create
     </a>
-  </h1>
+  </h2>
 
-  <form action="" method="get" class="form-inline">
+  <form action="" method="get" class="form-inline" style="width: 15%; padding-top: 30px">
     {{ search_form|crispy }}
     <input class="btn btn-secondary" type="submit" value="🔎">
   </form>
@@ -26,7 +28,7 @@
       </tr>
     {% for dish in dish_list %}
       <tr>
-        <td><a href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a></td>
+        <td><a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a></td>
         <td>{{ dish.name }}</td>
         <td>{{ dish.price }}</td>
         <td>{{ dish.dish_type.name }}</td>

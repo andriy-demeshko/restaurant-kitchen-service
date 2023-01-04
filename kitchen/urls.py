@@ -1,3 +1,4 @@
+from django.contrib.auth.views import LogoutView
 from django.urls import path
 from kitchen.views import (
     index,
@@ -9,19 +10,22 @@ from kitchen.views import (
     CookListView,
     CookDetailView,
     CookCreateView,
-    CookExperienceUpdateView,
     CookDeleteView,
     DishTypeListView,
     DishTypeDetailView,
     DishTypeCreateView,
     DishTypeUpdateView,
     DishTypeDeleteView,
-    toggle_assign_to_dish,
+    toggle_assign_to_dish, login_view, register_user, CookUpdateView,
 )
 
 
 urlpatterns = [
     path("", index, name="index"),
+
+    path('accounts/login/', login_view, name="login"),
+    path('accounts/register/', register_user, name="register"),
+    path("logout/", LogoutView.as_view(), name="logout"),
 
     path("dishes-types/", DishTypeListView.as_view(), name="dish-type-list"),
     path("dishes-types/<int:pk>/", DishTypeDetailView.as_view(), name="dish-type-detail"),
@@ -53,7 +57,7 @@ urlpatterns = [
     path("cooks/create/", CookCreateView.as_view(), name="cook-create"),
     path(
         "cooks/<int:pk>/update/",
-        CookExperienceUpdateView.as_view(),
+        CookUpdateView.as_view(),
         name="cook-update",
     ),
     path("cooks/<int:pk>/delete/", CookDeleteView.as_view(), name="cook-delete"),
