@@ -10,13 +10,16 @@ from kitchen.views import (
     CookListView,
     CookDetailView,
     CookCreateView,
+    CookUpdateView,
     CookDeleteView,
     DishTypeListView,
     DishTypeDetailView,
     DishTypeCreateView,
     DishTypeUpdateView,
     DishTypeDeleteView,
-    toggle_assign_to_dish, login_view, register_user, CookUpdateView,
+    toggle_assign_to_dish,
+    login_view,
+    register_user,
 )
 
 

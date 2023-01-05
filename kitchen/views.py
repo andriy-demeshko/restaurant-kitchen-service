@@ -1,12 +1,10 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import RedirectURLMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import generic
-from django.views.generic import TemplateView
 
 from kitchen.forms import DishForm, CookCreationForm, DishTypeSearchForm, DishSearchForm, \
     CookSearchForm, LoginForm, SignUpForm, CookUpdateForm

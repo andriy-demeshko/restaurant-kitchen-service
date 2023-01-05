@@ -2,9 +2,13 @@
 
 {% block content %}
   <h2 style="padding-top: 100px">Delete cook?</h2>
+
   <form action="" method="post">
     {% csrf_token %}
 
     <input type="submit" value="Yes" class="btn btn-danger">
+
+    <a href="{% url 'kitchen:cook-detail' pk=cook.id %}" class="btn btn-success">Cancel</a>
+
   </form>
 {% endblock %}
