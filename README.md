@@ -27,33 +27,33 @@ python manage.py runserver  # starts Django server
 
 ## DB Structure
 
-![](static/images/for_readme/db-structure.png)
+![](for_readme/db-structure.png)
 
 ## Page examples
 
 Login page
-![Website Interface](static/images/for_readme/login.png)
+![Website Interface](for_readme/login.png)
 
 Registration page
-![Website Interface](static/images/for_readme/registration.png)
+![Website Interface](for_readme/registration.png)
 
 Home page
-![Website Interface](static/images/for_readme/home.png)
+![Website Interface](for_readme/home.png)
 
 Dishes types list page
-![Website Interface](static/images/for_readme/dishes_types_list.png)
+![Website Interface](for_readme/dishes_types_list.png)
 
 Dishes list page
-![Website Interface](static/images/for_readme/dishes_list.png)
+![Website Interface](for_readme/dishes_list.png)
 
 Cooks list page
-![Website Interface](static/images/for_readme/cooks_list.png)
+![Website Interface](for_readme/cooks_list.png)
 
 Dishes types details page
-![Website Interface](static/images/for_readme/dishes_types_details.png)
+![Website Interface](for_readme/dishes_types_details.png)
 
 Dishes details page
-![Website Interface](static/images/for_readme/dishes_details.png)
+![Website Interface](for_readme/dishes_details.png)
 
 Cooks details page
-![Website Interface](static/images/for_readme/cooks_details.png)
+![Website Interface](for_readme/cooks_details.png)
