@@ -1,0 +1,14 @@
+.link-to-page {
+    float: right;
+    margin: 0 2px 0 2px;
+}
+
+.home {
+    width: 500px;
+}
+
+.description {
+    display: inline-block;
+    width: 500px;
+    text-align: justify;
+}
