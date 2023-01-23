@@ -21,15 +21,13 @@
   {% if dish_list %}
     <table class="table">
       <tr>
-        <th>ID</th>
         <th>Name</th>
         <th>Price</th>
         <th>Dish type</th>
       </tr>
     {% for dish in dish_list %}
       <tr>
-        <td><a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a></td>
-        <td>{{ dish.name }}</td>
+        <td><a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.name }}</a></td>
         <td>{{ dish.price }}</td>
         <td>{{ dish.dish_type.name }}</td>
       </tr>

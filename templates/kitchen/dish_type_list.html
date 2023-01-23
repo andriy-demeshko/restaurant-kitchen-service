@@ -19,7 +19,6 @@
   {% if dish_type_list %}
     <table class="table">
       <tr>
-        <th>ID</th>
         <th>Name</th>
         <th>Update</th>
         <th>Delete</th>
@@ -27,7 +26,6 @@
 
       {% for dishtype in dish_type_list %}
         <tr>
-          <td>{{ dishtype.id }}</td>
           <td><a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-type-detail" pk=dishtype.id %}">{{ dishtype.name }}</a></td>
           <td>
               <a style="color: green" href="{% url 'kitchen:dish-type-update' pk=dishtype.id %}">

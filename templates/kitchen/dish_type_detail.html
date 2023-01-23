@@ -17,12 +17,11 @@
 
     {% for dish in dishtype.dishes.all %}
         <hr>
-        <p><strong>Name:</strong> {{ dish.name }}</p>
+        <p class="text-muted"><strong>Name:</strong>
+          <a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.name }}</a>
+        </p>
         <p><strong>Price:</strong> {{ dish.price }}</p>
         <p class="description"><strong>Description:</strong> {{ dish.description }}</p>
-        <p class="text-muted"><strong>Id:</strong>
-          <a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a>
-        </p>
 
     {% empty %}
       <p>No dishes!</p>

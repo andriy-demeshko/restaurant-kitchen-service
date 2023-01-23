@@ -22,11 +22,11 @@
 
     {% for dish in cook.dishes.all %}
         <hr>
-        <p><strong>Name:</strong> {{ dish.name }}</p>
-        <p><strong>Dish type:</strong> {{ dish.dish_type.name }}</p>
-        <p class="text-muted"><strong>Id:</strong>
-          <a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.id }}</a>
+        <p class="text-muted"><strong>Name:</strong>
+          <a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.name }}</a>
         </p>
+        <p><strong>Dish type:</strong> {{ dish.dish_type.name }}</p>
+        <p><strong>Price:</strong> {{ dish.price }}</p>
 
     {% empty %}
       <p>No dishes!</p>
