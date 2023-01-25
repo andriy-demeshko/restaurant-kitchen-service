@@ -39,6 +39,8 @@ class CookUpdateForm(forms.ModelForm):
 
 
 def validate_years_of_experience(years_of_experience):
+    if years_of_experience is None:
+        return None
     if years_of_experience > 49:
         raise ValidationError("Years of experience must be less than 50 years")
 
