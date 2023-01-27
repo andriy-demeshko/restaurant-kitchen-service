@@ -17,6 +17,7 @@ python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
 create file .env with var DJANGO_SECRET_KEY=<your Django secret key>
+python manage.py migrate
 python manage.py runserver  # starts Django server
 ```
 
