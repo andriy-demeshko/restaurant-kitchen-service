@@ -1,0 +1,14 @@
+{% extends "base-presentation.html" %}
+
+{% block content %}
+  <h2 style="padding-top: 100px">Delete dish?</h2>
+
+  <form action="" method="post">
+    {% csrf_token %}
+
+    <input type="submit" value="Yes" class="btn btn-danger">
+
+    <a href="{% url 'kitchen:dish-detail' pk=dish.id %}" class="btn btn-success">Cancel</a>
+
+  </form>
+{% endblock %}

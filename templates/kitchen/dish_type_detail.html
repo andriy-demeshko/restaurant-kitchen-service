@@ -1,0 +1,31 @@
+{% extends "base-presentation.html" %}
+
+{% block content %}
+  <h2 style="padding-top: 100px">
+    {{ dishtype.name }}
+    <a href="{% url 'kitchen:dish-type-delete' pk=dishtype.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'kitchen:dish-type-update' pk=dishtype.id %}" class="btn btn-secondary link-to-page">
+      Update
+    </a>
+  </h2>
+
+  <div class="ml-3">
+    <h3>Dishes:</h3>
+
+    {% for dish in dishtype.dishes.all %}
+        <hr>
+        <p class="text-muted"><strong>Name:</strong>
+          <a style="color: blue; text-decoration: underline" href="{% url "kitchen:dish-detail" pk=dish.id %}">{{ dish.name }}</a>
+        </p>
+        <p><strong>Price:</strong> {{ dish.price }}</p>
+        <p class="description"><strong>Description:</strong> {{ dish.description }}</p>
+
+    {% empty %}
+      <p>No dishes!</p>
+    {% endfor %}
+  </div>
+{% endblock %}
+
