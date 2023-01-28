@@ -4,7 +4,7 @@ Restaurant kitchen service Django project to improve interaction between cooks a
 
 ## Check it out!
 
-[Restaurant Kitchen Service project deployed to Render](paste link here)
+[Restaurant Kitchen Service project deployed to Render](https://restaurant-kitchen-service-tum5.onrender.com)
 
 ## Installation
 
