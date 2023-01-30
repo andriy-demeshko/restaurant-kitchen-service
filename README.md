@@ -16,9 +16,20 @@ cd restaurant_kitchen_service
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
-create file .env with var DJANGO_SECRET_KEY=<your Django secret key>
+
+create file .env with vars:  # Set Environment Variables
+DJANGO_SECRET_KEY=<your Django secret key>
+DATABASE_URL=<postgres://user:pass@localhost:5432/test>  # your Postgres URL
+DJANGO_DEBUG=False
+
 python manage.py migrate
 python manage.py runserver  # starts Django server
+
+You can use the following test user to test the functionality of the site:
+login: user
+password: user12345
+
+Or create a super-user — python manage.py createsuperuser
 ```
 
 ## Features
