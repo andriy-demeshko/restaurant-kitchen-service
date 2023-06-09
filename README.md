@@ -1,4 +1,4 @@
-# Restaurant Kitchen Service Project
+# ChefConnect
 
 Restaurant kitchen service Django project to improve interaction between cooks and create new dishes and dishes types
 
